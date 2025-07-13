@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>𝐖𝐢𝐥𝐢𝐚𝐦𝐒𝐭𝐫</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      background: url('https://img1.pixhost.to/images/6973/618597917_malzhost.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    .gradient-text {
+      background: linear-gradient(45deg, #ff00ff, #ff0000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #loading {
+      position: fixed;
+      width: 100%; height: 100%;
+      background: #000;
+      display: flex; justify-content: center; align-items: center;
+      z-index: 9999;
+      font-size: 2em;
+      color: white;
+      transition: opacity 0.5s ease;
+    }
+
+    #loading.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .container {
+      padding: 2rem;
+      display: none;
+      max-width: 700px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+    }
+
+    h1, h3, h4 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .menu-btns {
+      display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;
+    }
+
+    .menu-btns button {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid #ff00ff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+    }
+
+    .menu-section {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    select {
+      padding: 0.6rem;
+      width: 100%;
+      border-radius: 8px;
+      background: #111;
+      color: white;
+      border: 2px solid #ff00ff;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    option {
+      background: #111;
+      color: white;
+    }
+
+    .copy-btn {
+      background: #ff00ff;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .copied {
+      color: lime;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+    }
+
+    #total {
+      margin: 2rem 0;
+      font-size: 1.5rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    img#qris-img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 1rem auto;
+      display: block;
+      box-shadow: 0 0 12px #ff00ff;
+    }
+
+    .zoomed {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .zoomed img {
+      width: 90%;
+      max-width: 400px;
+      border: 4px solid #fff;
+      border-radius: 20px;
+    }
+
+    .payment-methods {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .payment-methods button {
+      padding: 0.6rem 1.2rem;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid #ff00ff;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+    }
+
+    .buy-box {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-left: 5px solid #f0f;
+      margin-top: 2rem;
+      color: white;
+    }
+
+    .author {
+      text-align: center;
+      margin-top: 2rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    #waBtn button {
+      margin-top: 1rem;
+      background: #111;
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+      border: 2px solid #ff00ff;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading"><span class="gradient-text">𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐖𝐞𝐛𝐬𝐢𝐭𝐞...</span></div>
+
+  <div class="container" id="mainContent">
+    <h1 class="gradient-text">𝐖𝐢𝐥𝐢𝐚𝐦 𝐌𝐚𝐫𝐤𝐞𝐭𝐩𝐥𝐚𝐜𝐞</h1>
+
+    <div class="menu-btns">
+      <button onclick="showMenu('panel')" class="gradient-text">𝐋𝐢𝐡𝐚𝐭 𝐏𝐚𝐤𝐞𝐭 𝐏𝐚𝐧𝐞𝐥</button>
+      <button onclick="showMenu('lain')" class="gradient-text">𝐋𝐢𝐡𝐚𝐭 𝐏𝐚𝐤𝐞𝐭 𝐋𝐚𝐢𝐧𝐧𝐲𝐚</button>
+    </div>
+
+    <div id="menu-panel" class="menu-section">
+      <select onchange="selectProduct(this)">
+        <option disabled selected>Pilih Panel</option>
+        <option value="Panel 1 GB|1000">Panel 1 GB - Rp 1.000</option>
+        <ootion value="Panel 2 GB|2000">Panel 2 GB - Rp 2.000</ootion>
+        <option value="Panel 3 GB|3000">Panel 3 GB - Rp 3.000</option>
+        <option value="Panel 4 GB|4000">Panel 4 GB - Rp 4.000</option>
+        <option value="Panel 5 GB|5000">Panel 5 GB - Rp 5.000</option>
+        <option value="Panel 6 GB|6000">Panel 6 GB - Rp 6.000</option>
+        <option value="Panel 7 GB|7000">Panel 7 GB - Rp 7.000</option>
+        <option value="Panel 8 GB|8000">Panel 8 GB - Rp 8.000</option>
+        <option value="Panel 9 GB|9000">Panel 9 GB - Rp 9.000</option>
+        <option value="Panel 10 GB|10000">Panel 10 GB - Rp 10.000</option>
+        <option value="Unlimited CPU & RAM|2000">Unlimited CPU & RAM - Rp 2.000 (Promo)</option>
+      </select>
+    </div>
+
+    <div id="menu-lain" class="menu-section">
+      <select onchange="selectProduct(this)">
+        <option disabled selected>Pilih Paket Lain</option>
+        <option value="Reseller Panel|3000">Reseller Panel - Rp 3.000</option>
+        <option value="PT Panel|7000">PT Panel - Rp 7.000</option>
+        <option value="Admin Panel|5000">Admin Panel - Rp 5.000</option>
+        <option value="Owner Panel|10000">Owner Panel - Rp 10.000</option>
+        <option value="Tangan Kanan Panel|12000">Tangan Kanan Panel - Rp 12.000</option>
+        <option value="Murbug 15 Hari|5000">Murbug 15 Hari - Rp 5.000</option>
+        <option value="Murbug 30 Hari|10000">Murbug 30 Hari - Rp 10.000</option>
+        <option value="Murbug Permanen|20000">Murbug Permanen - Rp 20.000</option>
+        <option value="Buy Website Seperti Ini|5000">Buy Website Seperti Ini - Rp 5.000</option>
+      </select>
+    </div>
+
+    <div id="total">𝐓𝐨𝐭𝐚𝐥: 𝐑𝐩 𝟎</div>
+
+    <h3 class="gradient-text">𝐏𝐞𝐦𝐛𝐚𝐲𝐚𝐫𝐚𝐧</h3>
+    <div class="payment-methods">
+      <button onclick="setMetode('DANA')">𝐓𝐫𝐚𝐧𝐬𝐟𝐞𝐫 𝐕𝐢𝐚 𝐃𝐚𝐧𝐚</button>
+      <button onclick="setMetode('QRIS')">𝐓𝐫𝐚𝐧𝐬𝐟𝐞𝐫 𝐕𝐢𝐚 𝐐𝐫𝐢𝐬</button>
+    </div>
+
+    <div style="margin-top:1rem; text-align: center;">
+      <span>𝐃𝐚𝐧𝐚: <strong id="dana-number">087889079129</strong></span>
+      <button class="copy-btn" onclick="copyDana()">𝐒𝐚𝐥𝐢𝐧</button>
+      <span id="copyMsg" class="copied"></span>
+    </div>
+
+    <img id="qris-img" src="https://img1.pixhost.to/images/7064/619906989_hiro.jpg" alt="QRIS" onclick="zoomQRIS()" loading="lazy" />
+
+    <div class="buy-box">
+      <h4 class="gradient-text">𝐉𝐮𝐦𝐥𝐚𝐡 𝐃𝐚𝐧 𝐓𝐨𝐭𝐚𝐥:</h4>
+      <pre id="waText">[ORDER PANEL]
+| Nama Produk : -
+| Harga       : -
+| Metode      : -
+| Status      : Cek Admin Ganteng</pre>
+      <a id="waBtn" href="#" target="_blank">
+        <button>𝐁𝐮𝐲 𝐕𝐢𝐚 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩</button>
+      </a>
+    </div>
+
+    <div class="author">© 2025 - Author: Wiliam</div>
+  </div>
+
+  <div id="zoomView" class="zoomed" style="display:none;" onclick="closeQRIS()">
+    <img src="https://img1.pixhost.to/images/7064/619906989_hiro.jpg" alt="QRIS Zoom">
+  </div>
+
+  <script>
+    let selectedProduct = '';
+    let selectedPrice = 0;
+    let selectedMetode = '';
+
+    function showMenu(menu) {
+      document.getElementById('menu-panel').style.display = menu === 'panel' ? 'block' : 'none';
+      document.getElementById('menu-lain').style.display = menu === 'lain' ? 'block' : 'none';
+      selectedProduct = '';
+      selectedPrice = 0;
+      selectedMetode = '';
+      updateText();
+    }
+
+    function selectProduct(select) {
+      const [produk, harga] = select.value.split('|');
+      selectedProduct = produk;
+      selectedPrice = parseInt(harga);
+      updateText();
+    }
+
+    function setMetode(metode) {
+      selectedMetode = metode;
+      updateText();
+    }
+
+    function updateText() {
+      const detail = `[ORDER PANEL]\n` +
+        `| Nama Produk : ${selectedProduct || '-'}\n` +
+        `| Harga       : ${selectedPrice ? 'Rp ' + selectedPrice.toLocaleString() : '-'}\n` +
+        `| Metode      : ${selectedMetode || '-'}\n` +
+        `| Status      : Cek Admin Ganteng`;
+
+      document.getElementById("waText").textContent = detail;
+      document.getElementById("total").textContent = selectedPrice ? `𝐓𝐨𝐭𝐚𝐥: 𝐑𝐩 ${selectedPrice.toLocaleString()}` : '𝐓𝐨𝐭𝐚𝐥: 𝐑𝐩 𝟎';
+      const msg = encodeURIComponent(detail);
+      document.getElementById("waBtn").href = "https://wa.me/6287824128670?text=" + msg;
+    }
+
+    function copyDana() {
+      const number = document.getElementById("dana-number").textContent;
+      navigator.clipboard.writeText(number).then(() => {
+        document.getElementById("copyMsg").textContent = "Disalin!";
+        setTimeout(() => document.getElementById("copyMsg").textContent = "", 2000);
+      });
+    }
+
+    function zoomQRIS() {
+      document.getElementById("zoomView").style.display = "flex";
+    }
+
+    function closeQRIS() {
+      document.getElementById("zoomView").style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.getElementById("loading").classList.add("hide");
+        document.getElementById("mainContent").style.display = "block";
+      }, 300);
+    });
+  </script>
+</body>
+</html>
